@@ -61,8 +61,8 @@ theme="dark"
           {items.map((product) => {
             return (
               <>
-                <div key={product.id} className="col-lg-4 col-md-6 my-3 text-center" onClick={handleProductClick(product)}>
-                  <div className="card" style={{ width: "18rem" }}>
+                <div key={product.id} className="col-lg-4 col-md-6 my-3 text-center" >
+                  <div className="card" style={{ width: "18rem" }} onClick={handleProductClick(product)}>
                     <Link to={`/product/${product.id}`}
                      style={{
                         display:'flex',
