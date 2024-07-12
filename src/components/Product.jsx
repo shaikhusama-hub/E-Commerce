@@ -62,7 +62,7 @@ theme="dark"
             return (
               <>
                 <div key={product.id} className="col-lg-4 col-md-6 my-3 text-center" >
-                  <div className="card" style={{ width: "18rem" }} onClick={handleProductClick(product)}>
+                  <div className="card" style={{ width: "18rem" }} >
                     <Link to={`/product/${product.id}`}
                      style={{
                         display:'flex',
@@ -76,7 +76,7 @@ theme="dark"
                       alt="..."
                       />
                       </Link>
-                    <div className="card-body">
+                    <div className="card-body" onClick={handleProductClick(product)}>
                       <h5 className="card-title">{product.title}</h5>
                       <p className="card-text">{product.description}</p>
                       <button className="btn btn-primary mx-3">
