@@ -4,6 +4,23 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const handleProductClick = (menu) => {
+  window.dataLayer.push({
+    event: "product_click",
+    product_id: menu.id,
+    product_name: menu.title,
+    product_price: menu.price,
+    product_page:`/product/${menu.id}`,
+    product_class: "card",
+  });
+
+  console.log("Data layer push:", {
+    event: "product_click",
+    product_id: menu.id,
+    product_name: menu.title,
+    product_price: menu.price,
+  });
+};
 const Product = ({items, cart , setCart}) => {
    
   const addToCart = (id,price,title,description,imgSrc) =>{
@@ -44,7 +61,7 @@ theme="dark"
           {items.map((product) => {
             return (
               <>
-                <div key={product.id} className="col-lg-4 col-md-6 my-3 text-center">
+                <div key={product.id} className="col-lg-4 col-md-6 my-3 text-center" onClick={handleProductClick(product)}>
                   <div className="card" style={{ width: "18rem" }}>
                     <Link to={`/product/${product.id}`}
                      style={{
