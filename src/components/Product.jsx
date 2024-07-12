@@ -62,8 +62,9 @@ theme="dark"
             return (
               <>
                 <div key={product.id} className="col-lg-4 col-md-6 my-3 text-center" >
-                  <div className="card" style={{ width: "18rem" }} onClick={handleProductClick(product)}>
-                    <Link to={`/product/${product.id}`}
+                  <div className="card" style={{ width: "18rem" }}>
+                  <Link to={`/product/${product.id}`}
+                     onClick={()=>handleProductClick(product)}
                      style={{
                         display:'flex',
                         justifyContent:'center',
